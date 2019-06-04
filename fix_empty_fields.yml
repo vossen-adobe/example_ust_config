@@ -1,0 +1,20 @@
+# This is a sample configuration file for a user extension.
+#
+# This file extends the behavior specified in your main configuration file,
+# by adding custom python code to the logic for attribute and group mapping
+# which is specified in the directory_users section.
+#
+# To load your extension file, put the file's relative or absolute path
+# as the value of the extension setting in the directory_users section
+# of your main configuration file.
+
+extended_attributes: []
+extended_adobe_groups: []
+after_mapping_hook: |
+  for attr in target_attributes:
+    if not target_attributes[attr].strip():
+      target_attributes[attr] = None
+
+
+
+
